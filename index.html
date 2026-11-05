@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>YORIMICHI 寄り道 | Your Little Detour</title>
+    <meta name="description" content="YORIMICHI 寄り道. Your little detour. A 24-hour Japanese konbini.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%23d8434f%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-size=%2714%27 text-anchor=%27middle%27 fill=%27%23f4ead5%27%3EYM%3C/text%3E%3C/svg%3E">
+
+    <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/home.css"><link rel="stylesheet" href="css/motion.css">
+<script src="js/motion.js"></script></head>
+
+<body>
+
+<header id="hdr"></header>
+
+<main>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <div class="rain"></div>
+
+        <!-- Falling petals -->
+        <i class="petal" style="--x:8%;--d:9s;--l:0s"></i>
+        <i class="petal" style="--x:22%;--d:12s;--l:-3s"></i>
+        <i class="petal" style="--x:35%;--d:10s;--l:-6s"></i>
+        <i class="petal" style="--x:48%;--d:13s;--l:-1s"></i>
+        <i class="petal" style="--x:60%;--d:11s;--l:-4s"></i>
+        <i class="petal" style="--x:72%;--d:9s;--l:-7s"></i>
+        <i class="petal" style="--x:84%;--d:12s;--l:-2s"></i>
+        <i class="petal" style="--x:93%;--d:10s;--l:-5s"></i>
+
+        <div class="wrap hero-in">
+
+            <!-- HERO TEXT -->
+            <div>
+                <p class="jp">コンビニ · 24H</p>
+
+                <h1>
+                    Your Little
+                    <span style="color:var(--red)">Detour.</span>
+                </h1>
+
+                <p class="lead" data-i18n="lead"></p>
+
+                <div class="btns">
+                    <a class="btn" href="shop.html" data-i18n="shop_now"></a>
+                    <button class="btn ghost" id="rnd" data-i18n="random"></button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- RANDOM PRODUCT RESULT -->
+    <div class="wrap">
+        <div
+            id="rndOut"
+            class="grid"
+            style="max-width:300px;margin:24px auto 0"
+            hidden
+        ></div>
+    </div>
+
+
+    <!-- FEATURED PRODUCTS -->
+    <section class="sec wrap">
+
+        <div class="head">
+            <div>
+                <h2 data-i18n="featured"></h2>
+                <p class="sub" data-i18n="featured_s"></p>
+            </div>
+
+            <a class="btn ghost sm" href="shop.html" data-i18n="shop_now"></a>
+        </div>
+
+        <div class="grid" id="featured"></div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+    <section class="sec dark">
+
+        <div class="wrap">
+
+            <h2 data-i18n="cats"></h2>
+            <p class="sub">&nbsp;</p>
+
+            <div class="cats">
+
+                <a class="cat" href="shop.html?cat=Snacks">
+                    <i>🍘</i>
+                    <h3>Snacks</h3>
+                    <p class="jp">お菓子</p>
+                </a>
+
+                <a class="cat" href="shop.html?cat=Drinks">
+                    <i>🫧</i>
+                    <h3>Drinks</h3>
+                    <p class="jp">飲み物</p>
+                </a>
+
+                <a class="cat" href="shop.html?cat=Instant%20Ramen">
+                    <i>🍜</i>
+                    <h3>Instant Ramen</h3>
+                    <p class="jp">即席麺</p>
+                </a>
+
+                <a class="cat" href="shop.html?cat=Desserts">
+                    <i>🍡</i>
+                    <h3>Desserts</h3>
+                    <p class="jp">デザート</p>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- DAILY SPECIAL + BRAND STORY -->
+    <section class="sec wrap">
+
+        <div class="split">
+
+            <div>
+                <h2 data-i18n="special"></h2>
+                <p class="sub" data-i18n="special_s"></p>
+
+                <div
+                    class="grid"
+                    id="special"
+                    style="grid-template-columns:minmax(0,320px)"
+                ></div>
+            </div>
+
+            <div class="panel" style="align-self:center">
+
+                <h2>寄り道 (yorimichi)</h2>
+
+                <p class="sub">
+                    To take a little detour on the way home.
+                </p>
+
+                <p>
+                    Rain on the window, a warm bowl of noodles,
+                    nowhere to be. That is the whole idea.
+                </p>
+
+                <p style="margin-top:14px">
+                    <a class="btn ghost sm" href="about.html">
+                        Our story
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- NEW ARRIVALS -->
+    <section class="sec wrap">
+
+        <h2 data-i18n="newa"></h2>
+        <p class="sub" data-i18n="newa_s"></p>
+
+        <div class="grid" id="fresh"></div>
+
+    </section>
+
+
+    <!-- OPENING HOURS -->
+    <div class="hours">
+        <strong data-i18n="open"></strong>
+        <span class="jp" data-i18n="open_sub"></span>
+    </div>
+
+
+    <!-- PROMOTION -->
+    <section class="sec wrap">
+
+        <div class="promo">
+
+            <div>
+                <h2 data-i18n="promo"></h2>
+                <p data-i18n="promo_s"></p>
+            </div>
+
+            <a class="btn" href="shop.html" data-i18n="shop_now"></a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer id="ftr"></footer>
+
+
+<!-- JAVASCRIPT -->
+<script src="js/products.js"></script>
+<script src="js/main.js"></script>
+<script src="js/home.js"></script>
+
+<script src="js/home-motion.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+/* Basket page */
+.sec.wrap>h1{font-size:clamp(2.6rem,7vw,4.6rem);border-bottom:8px solid var(--red);display:inline-block}
+.cart{display:grid;grid-template-columns:1fr 360px;gap:36px;align-items:start}
+.row{display:grid;grid-template-columns:90px 1fr auto;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.row img{width:90px;height:90px;object-fit:cover;border:1px solid var(--cream);filter:saturate(.75)}
+.row a{text-decoration:none}.row b{font-family:'Shippori Mincho',serif;font-size:1.1rem}
+.row .rm{background:none;border:0;color:var(--grey);text-decoration:underline;font:inherit;font-size:.82rem}
+.row .rm:hover{color:var(--cream)}
+.sum p{display:flex;justify-content:space-between;margin-bottom:12px}
+.sum .tot{font:700 1.5rem 'Shippori Mincho',serif;border-top:1px solid var(--cream);padding-top:14px;margin-top:6px}
+.sum .btn{width:100%;margin-top:8px}
+@media(max-width:860px){.cart{grid-template-columns:1fr}}
+@media(max-width:720px){.row{grid-template-columns:64px 1fr;gap:12px}.row img{width:64px;height:64px}}
+
+/* free-delivery progress */
+.bar{height:6px;background:#efe6da22;margin:-4px 0 8px}.bar i{display:block;height:100%;background:var(--red);transition:width .4s}
+/* checkout dialog + receipt */
+.dlg{background:var(--wine);color:var(--cream);border:1px solid var(--cream);padding:28px;width:min(460px,92vw);margin:auto;box-shadow:8px 8px 0 #000}
+.dlg::backdrop{background:#000c}
+.dlg label{display:block;margin-top:14px;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grey)}
+.dlg input,.dlg select{width:100%;margin-top:4px;font-size:1rem;letter-spacing:0;text-transform:none}
+.dtot{display:flex;justify-content:space-between;align-items:baseline;margin-top:20px;padding-top:14px;border-top:1px solid var(--cream)}
+.dtot b{font:700 1.5rem 'Shippori Mincho',serif}
+.dlg .acts{justify-content:flex-end}
+.receipt{border-style:solid;border-color:var(--cream);color:var(--cream);background:var(--wine)}
+.receipt h2::before{content:none}
+.receipt .meta{display:inline-grid;text-align:left;margin:18px 0}
+.receipt .btn{display:block;width:max-content;margin:0 auto}
+.dlg .acts{display:flex;gap:12px;margin-top:22px;justify-content:flex-end}

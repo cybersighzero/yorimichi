@@ -1,0 +1,17 @@
+/* About page */
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+.prose{max-width:62ch}
+.prose h1{font-size:clamp(2.6rem,6vw,4.4rem);margin-bottom:6px}
+.prose .sub{border-bottom:1px solid var(--line);padding-bottom:18px}
+.prose p{margin-bottom:16px;color:#e2d7ca}
+.prose>p:nth-of-type(2)::first-letter{float:left;font:700 4.4rem/.8 'Shippori Mincho',serif;color:var(--red);padding:6px 10px 0 0}
+.prose h2{margin-top:30px;padding-top:20px;border-top:6px solid var(--red)}
+/* modular image blocks: circle + lattice, like the editorial templates */
+.scene{position:relative;overflow:hidden;min-height:260px;display:flex;align-items:flex-end;padding:18px;border:1px solid var(--cream);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
+.scene span{position:relative;background:var(--ink);padding:4px 10px}
+.s1{background:radial-gradient(circle at 68% 42%,var(--ink) 0 26%,transparent 26.5%),var(--maroon)}
+.s2{background:var(--orn),#b3a79f;background-color:#b3a79f;color:var(--cream)}
+.s2::before{content:"";position:absolute;left:12%;top:14%;width:46%;aspect-ratio:1;border-radius:50%;background:var(--wine)}
+.sec.dark .split{align-items:stretch}
+.panel p{margin-bottom:8px}
+@media(max-width:860px){.split{grid-template-columns:1fr}}

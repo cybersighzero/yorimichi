@@ -1,0 +1,35 @@
+/* Product data (fictional): id, name, jp, category, price(¥), popularity, label, emoji, colour, description */
+const PRODUCTS=[
+[1,'Salted Seaweed Chips','うす塩のりチップス','Snacks',168,92,'Best','🍟','#c0392b','Thin potato chips dusted with sea salt and crisp nori.'],
+[2,'Strawberry Cream Sticks','いちごスティック','Snacks',198,95,'Best','🍓','#e84a6f','Chocolate-dipped biscuit sticks, the sharing kind.'],
+[3,'Soy Sauce Rice Crackers','しょうゆせんべい','Snacks',248,70,'','🍘','#b9772f','Grilled rice crackers brushed with sweet soy.'],
+[4,'Matcha Chocolate Biscuits','抹茶ビスケット','Snacks',298,64,'New','🍵','#4f8a4b','Buttery biscuits with a bittersweet matcha coating.'],
+[5,'Wasabi Peas','わさび豆','Snacks',178,55,'','🟢','#5d9b3a','Crunchy green peas with a quick wasabi kick.'],
+[6,'Cheese Cod Roe Puffs','たらこチーズ','Snacks',188,60,'Limited','🧀','#e0a030','Airy corn puffs with cheese and mentaiko flavour.'],
+[7,'Umeboshi Gummies','梅グミ','Snacks',228,50,'New','🍬','#a83a5a','Sweet and sour pickled plum gummies.'],
+[8,'Classic Ramune','クラシックラムネ','Drinks',150,98,'Best','🫧','#3aa0d8','Marble-in-the-neck lemon-lime soda. Pop it with the little plunger.'],
+[9,'Roasted Green Tea','ほうじ茶','Drinks',140,80,'','🍵','#6b8e3d','Smoky, mellow bottled hojicha, unsweetened.'],
+[10,'Midnight Black Coffee','深夜ブラック','Drinks',160,88,'Best','☕','#3b2a22','Strong canned coffee for the late shift.'],
+[11,'White Peach Water','白桃ウォーター','Drinks',180,72,'New','🍑','#f0a58c','Lightly sweet peach water, summer in a bottle.'],
+[12,'Yuzu Soda','ゆずソーダ','Drinks',170,66,'','🍋','#e6c23a','Sparkling citrus with a sharp, fragrant yuzu finish.'],
+[13,'Lychee Milk Soda','ライチミルク','Drinks',190,58,'Limited','🥛','#d9a3c0','Creamy lychee soda, only while it lasts.'],
+[14,'Cold Barley Tea','むぎ茶','Drinks',130,52,'','🧊','#a8742c','Caffeine-free, toasty and best served ice cold.'],
+[15,'Tokyo Shoyu Ramen','東京醤油ラーメン','Instant Ramen',258,85,'Best','🍜','#b5532a','Clear soy broth, curly noodles, dried scallion.'],
+[16,'Spicy Miso Cup Noodles','辛味噌カップ','Instant Ramen',298,78,'','🌶️','#c23b2a','Rich miso broth with a slow-building heat.'],
+[17,'Midnight Tonkotsu Bowl','深夜豚骨','Instant Ramen',348,90,'Best','🍥','#a58f5a','Creamy pork-bone broth with a soft egg-style topping.'],
+[18,'Curry Udon Cup','カレーうどん','Instant Ramen',278,60,'','🍛','#d89a1d','Thick udon in a mild Japanese curry broth.'],
+[19,'Sauce Yakisoba Cup','ソース焼きそば','Instant Ramen',268,74,'','🍝','#8a4b22','Drain, add sauce, and top with seaweed flakes.'],
+[20,'Salt Lemon Ramen','塩レモンらーめん','Instant Ramen',288,48,'New','🍋','#b9ad3a','Light salt broth brightened with lemon.'],
+[21,'Strawberry Daifuku','いちご大福','Desserts',320,86,'','🍡','#f08fa8','Soft mochi around sweet bean paste and a whole berry.'],
+[22,'Custard Pudding','カスタードプリン','Desserts',220,93,'Best','🍮','#e8b64a','Wobbly pudding with a dark caramel base.'],
+[23,'Red Bean Dorayaki','どら焼き','Desserts',240,76,'','🥞','#a8622a','Two honey pancakes with sweet azuki filling.'],
+[24,'Matcha Roll Cake','抹茶ロールケーキ','Desserts',340,68,'New','🍰','#6f9c55','Soft sponge rolled with matcha cream.'],
+[25,'Black Sesame Mochi','黒ごま餅','Desserts',280,45,'Limited','⚫','#444a66','Chewy mochi with nutty black sesame filling.'],
+[26,'Custard Taiyaki','たい焼き','Desserts',260,62,'','🐟','#d0883a','Fish-shaped cakes with warm custard inside.'],
+[27,'Sakura Mochi Candy','さくら餅キャンディ','Snacks',210,56,'New','🌸','#e59ab0','Soft chewy candy with a salted cherry-blossom note.'],
+[29,'Hojicha Latte','ほうじ茶ラテ','Drinks',200,70,'New','🫖','#9a6a45','Roasted tea with milk, made for rainy nights.'],
+[31,'Soy Milk Ramen Bowl','豆乳ラーメン','Instant Ramen',318,52,'Limited','🥣','#c9b48a','Creamy soy milk broth, mild and rich.'],
+[32,'Hojicha Pudding','ほうじ茶プリン','Desserts',250,59,'New','🍮','#7a5a3a','Roasted tea custard over a soft caramel layer.']
+].map(([id,name,jp,cat,price,pop,tag,emoji,color,desc])=>({id,name,jp,cat,price,pop,tag,emoji,color,desc}));
+/* Generated SVG "packaging": images can never be broken */
+const pImg=p=>'data:image/svg+xml,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${p.color}"/><stop offset="1" stop-color="#0b0f1e"/></linearGradient></defs><rect width="400" height="400" fill="url(#g)"/><rect y="290" width="400" height="70" fill="#f4ead5" opacity=".93"/><text x="200" y="215" font-size="130" text-anchor="middle">${p.emoji}</text><text x="200" y="335" font-size="28" text-anchor="middle" fill="#0b0f1e" font-family="sans-serif" font-weight="700">${p.jp}</text><text x="20" y="38" font-size="16" fill="#f4ead5" font-family="sans-serif" opacity=".8">YM ${p.cat.toUpperCase()}</text></svg>`);

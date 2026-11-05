@@ -1,0 +1,11 @@
+/* Product details page */
+.pd{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.pd img{width:100%;border:1px solid var(--cream);padding:10px;background:var(--wine);box-shadow:10px 10px 0 var(--maroon);filter:saturate(.8)}
+.pd h1{font-size:clamp(2rem,4.5vw,3.2rem)!important;margin:6px 0}
+.pd .price{display:inline-block;background:var(--red);padding:6px 16px;font:700 1.8rem 'Shippori Mincho',serif;margin:14px 0}
+.pd .price s{font-size:1rem}.pd .price .tag{margin-left:8px}
+.meta{display:grid;grid-template-columns:auto 1fr;gap:6px 22px;margin:20px 0;padding:16px 0;border-block:1px solid var(--line);color:var(--grey);text-transform:uppercase;font-size:.8rem;letter-spacing:.1em}
+.meta dd{color:var(--cream);text-transform:none;letter-spacing:0;font-size:1rem}
+.acts{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:20px}
+#relWrap{border-top:1px solid var(--line)}
+@media(max-width:860px){.pd{grid-template-columns:1fr;gap:28px}}

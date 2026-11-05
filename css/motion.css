@@ -1,0 +1,36 @@
+/* YORIMICHI motion. Everything is gated by html.mo (set by js/motion.js), so content is
+   always visible without JS or with reduced motion.
+   TUNE HERE: duration, distance and easing. Stagger/delay values live in each js/*-motion.js. */
+:root{--mo-dur:.8s;--mo-ease:cubic-bezier(.22,.8,.3,1);--mo-shift:22px;--mo-side:34px}
+
+/* 1. Hero opening: subtitle, heading, description, buttons. Plays once on load. */
+.mo .hero-in>div>*{animation:mo-up .75s var(--mo-ease) backwards}
+.mo .hero-in>div>:nth-child(1){animation-name:mo-fade;animation-delay:.1s}
+.mo .hero-in>div>:nth-child(2){animation-delay:.35s}
+.mo .hero-in>div>:nth-child(3){animation-delay:.6s}
+.mo .hero-in>div>:nth-child(4){animation-delay:.85s}
+@keyframes mo-up{from{opacity:0;transform:translateY(18px)}}
+@keyframes mo-fade{from{opacity:0}}
+
+/* Scroll reveals (uses individual `translate`/`scale` so hover `transform` still works) */
+.mo [data-reveal]{opacity:0;transition:opacity var(--mo-dur) var(--mo-ease) var(--d,0ms),translate var(--mo-dur) var(--mo-ease) var(--d,0ms),transform .35s var(--mo-ease),box-shadow .35s ease,background-color .25s}
+.mo [data-reveal=up]{translate:0 var(--mo-shift)}
+.mo [data-reveal=left]{translate:calc(var(--mo-side)*-1) 0}
+.mo [data-reveal=right]{translate:var(--mo-side) 0}
+.mo [data-reveal=soft]{--mo-dur:.35s}
+.mo [data-reveal].in{opacity:1;translate:0 0}
+
+/* 4. Daily special: image eases in from slightly larger, text arrives after */
+.mo [data-reveal=special] .pic img{scale:1.16;transition:scale 1.9s var(--mo-ease) var(--d,0ms),transform .6s var(--mo-ease)}
+.mo [data-reveal=special].in .pic img{scale:1}
+.mo [data-reveal=special] .cb{opacity:0;translate:0 12px;transition:opacity .9s ease .7s,translate .9s ease .7s}
+.mo [data-reveal=special].in .cb{opacity:1;translate:0 0}
+
+/* 6. Product card hover: lift, soft shadow, slight image zoom. Title and price do not move. */
+.pic img{transition:transform .6s var(--mo-ease)}
+@media(hover:hover) and (pointer:fine){
+ .card:hover{transform:translateY(-5px);box-shadow:6px 6px 0 var(--maroon),0 22px 36px rgba(0,0,0,.5)}
+ .card:hover .pic img{transform:scale(1.05)}
+}
+@media(hover:none){.card:hover{transform:none;box-shadow:6px 6px 0 var(--maroon)}.card:hover .pic img{transform:none}}
+@media(prefers-reduced-motion:reduce){.card:hover,.card:hover .pic img{transform:none}}
