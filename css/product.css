@@ -1,6 +1,6 @@
 /* Product details page */
 .pd{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
-.pd img{width:100%;border:1px solid var(--cream);padding:10px;background:var(--wine);box-shadow:10px 10px 0 var(--maroon);filter:saturate(.8)}
+.pd img{width:100%;aspect-ratio:1/.88;object-fit:cover;border:1px solid var(--cream);padding:10px;background:var(--wine);box-shadow:10px 10px 0 var(--maroon);filter:saturate(.8)}
 .pd h1{font-size:clamp(2rem,4.5vw,3.2rem)!important;margin:6px 0}
 .pd .price{display:inline-block;background:var(--red);padding:6px 16px;font:700 1.8rem 'Shippori Mincho',serif;margin:14px 0}
 .pd .price s{font-size:1rem}.pd .price .tag{margin-left:8px}

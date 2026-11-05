@@ -1,17 +1,46 @@
-/* About page */
-.split{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
-.prose{max-width:62ch}
-.prose h1{font-size:clamp(2.6rem,6vw,4.4rem);margin-bottom:6px}
-.prose .sub{border-bottom:1px solid var(--line);padding-bottom:18px}
-.prose p{margin-bottom:16px;color:#e2d7ca}
-.prose>p:nth-of-type(2)::first-letter{float:left;font:700 4.4rem/.8 'Shippori Mincho',serif;color:var(--red);padding:6px 10px 0 0}
-.prose h2{margin-top:30px;padding-top:20px;border-top:6px solid var(--red)}
-/* modular image blocks: circle + lattice, like the editorial templates */
-.scene{position:relative;overflow:hidden;min-height:260px;display:flex;align-items:flex-end;padding:18px;border:1px solid var(--cream);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
-.scene span{position:relative;background:var(--ink);padding:4px 10px}
-.s1{background:radial-gradient(circle at 68% 42%,var(--ink) 0 26%,transparent 26.5%),var(--maroon)}
-.s2{background:var(--orn),#b3a79f;background-color:#b3a79f;color:var(--cream)}
-.s2::before{content:"";position:absolute;left:12%;top:14%;width:46%;aspect-ratio:1;border-radius:50%;background:var(--wine)}
-.sec.dark .split{align-items:stretch}
+/* About page: symmetrical editorial layout */
+.sec>h2,.sec>.sub{text-align:center}
+.ab-hero{position:relative;text-align:center;padding:84px 0 60px;overflow:hidden;background:radial-gradient(ellipse at 50% 0,#4a0d12 0,var(--navy) 72%)}
+.ab-hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(100deg,transparent 0 26px,#efe6da12 26px 27px);animation:ab-rain .9s linear infinite}
+.ab-hero::after{content:"寄り道";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font:700 clamp(8rem,28vw,22rem)/1 'Shippori Mincho',serif;white-space:nowrap;color:transparent;-webkit-text-stroke:1px #efe6da1f;pointer-events:none}
+@keyframes ab-rain{to{background-position:-30px 70px}}
+.ab-hero .wrap{position:relative;z-index:1}
+.ab-hero h1{font-size:clamp(2.6rem,7vw,5rem);margin:8px 0 4px}
+.ab-hero .sub{margin-bottom:16px}
+.live{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);background:#0c0607aa;padding:6px 18px;font-size:.82rem;letter-spacing:.1em}
+.live #tokyoTime{font-weight:700;letter-spacing:.14em}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--blue);animation:ab-pulse 2s ease-out infinite}
+@keyframes ab-pulse{0%{box-shadow:0 0 0 0 #9fb0c3aa}100%{box-shadow:0 0 0 12px #9fb0c300}}
+/* photo slots: drop images into assets/images/about/ (storefront.jpg, vending.jpg, shelves.jpg) */
+.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.photo{position:relative;margin:0;aspect-ratio:4/5;overflow:hidden;display:flex;align-items:flex-end;border:1px solid var(--cream);box-shadow:8px 8px 0 var(--maroon);background:var(--orn),var(--wine);background-color:var(--wine)}
+.photo::before{content:"+ photo\A" attr(data-slot);white-space:pre;position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:20px;font-size:.75rem;letter-spacing:.1em;color:#efe6da99}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s var(--mo-ease,ease)}
+.photo figcaption{position:relative;z-index:1;margin:14px;background:var(--ink);padding:4px 12px;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+@media(hover:hover){.photo:hover img{transform:scale(1.05)}}
+/* three equal story cards */
+.story{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.story .panel{text-align:center;padding-top:38px}
+.num{display:block;font:700 2.6rem/1 'Shippori Mincho',serif;color:var(--red);margin-bottom:10px}
+.story h3{font-size:1.4rem;margin-bottom:12px}
+.story p{color:#e2d7ca;text-align:left}
+/* night timeline: four equal tiles */
+.night{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line)}
+.tile{padding:28px 22px;text-align:center;border-right:1px solid var(--line);transition:background .3s}
+.tile:last-child{border-right:0}
+.tile:hover{background:var(--wine)}
+.tile i{font-style:normal;font-size:2.4rem;display:block}
+.tile b{display:inline-block;margin:10px 0 6px;font-size:.75rem;letter-spacing:.2em;background:var(--red);padding:2px 10px}
+.tile h3{font-size:1.2rem;margin-bottom:6px}
+.tile p{color:var(--grey);font-size:.9rem}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.stats b{display:block;font:700 clamp(2.6rem,6vw,4rem)/1 'Shippori Mincho',serif}
+.stats span{color:var(--grey);letter-spacing:.14em;text-transform:uppercase;font-size:.75rem}
+/* visit */
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.visit .panel{text-align:center}
+.visit .open{font:700 clamp(1.5rem,3vw,2rem) 'Shippori Mincho',serif;color:var(--blue);margin:6px 0}
 .panel p{margin-bottom:8px}
-@media(max-width:860px){.split{grid-template-columns:1fr}}
+@media(max-width:860px){.story{grid-template-columns:1fr}.night{grid-template-columns:1fr 1fr}.tile:nth-child(2){border-right:0}.tile:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media(max-width:720px){.photos{grid-template-columns:1fr}.photo{aspect-ratio:4/3}.visit{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr;row-gap:28px}}

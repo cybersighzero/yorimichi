@@ -34,3 +34,4 @@
 }
 @media(hover:none){.card:hover{transform:none;box-shadow:6px 6px 0 var(--maroon)}.card:hover .pic img{transform:none}}
 @media(prefers-reduced-motion:reduce){.card:hover,.card:hover .pic img{transform:none}}
+.mo main{overflow-x:clip}

@@ -1,0 +1,1 @@
+Name each photo after the product, e.g. classic-ramune.jpg. See IMAGE_GUIDE.md in the project root for every file name.

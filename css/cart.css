@@ -13,7 +13,7 @@
 @media(max-width:720px){.row{grid-template-columns:64px 1fr;gap:12px}.row img{width:64px;height:64px}}
 
 /* free-delivery progress */
-.bar{height:6px;background:#efe6da22;margin:-4px 0 8px}.bar i{display:block;height:100%;background:var(--red);transition:width .4s}
+.shipbar{height:6px;background:#efe6da22;margin:-4px 0 8px}.shipbar i{display:block;height:100%;background:var(--red);transition:width .4s}
 /* checkout dialog + receipt */
 .dlg{background:var(--wine);color:var(--cream);border:1px solid var(--cream);padding:28px;width:min(460px,92vw);margin:auto;box-shadow:8px 8px 0 #000}
 .dlg::backdrop{background:#000c}

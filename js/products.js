@@ -32,4 +32,18 @@ const PRODUCTS=[
 [32,'Hojicha Pudding','ほうじ茶プリン','Desserts',250,59,'New','🍮','#7a5a3a','Roasted tea custard over a soft caramel layer.']
 ].map(([id,name,jp,cat,price,pop,tag,emoji,color,desc])=>({id,name,jp,cat,price,pop,tag,emoji,color,desc}));
 /* Generated SVG "packaging": images can never be broken */
-const pImg=p=>'data:image/svg+xml,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${p.color}"/><stop offset="1" stop-color="#0b0f1e"/></linearGradient></defs><rect width="400" height="400" fill="url(#g)"/><rect y="290" width="400" height="70" fill="#f4ead5" opacity=".93"/><text x="200" y="215" font-size="130" text-anchor="middle">${p.emoji}</text><text x="200" y="335" font-size="28" text-anchor="middle" fill="#0b0f1e" font-family="sans-serif" font-weight="700">${p.jp}</text><text x="20" y="38" font-size="16" fill="#f4ead5" font-family="sans-serif" opacity=".8">YM ${p.cat.toUpperCase()}</text></svg>`);
+const pArt=p=>'data:image/svg+xml,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${p.color}"/><stop offset="1" stop-color="#0b0f1e"/></linearGradient></defs><rect width="400" height="400" fill="url(#g)"/><rect y="290" width="400" height="70" fill="#f4ead5" opacity=".93"/><text x="200" y="215" font-size="130" text-anchor="middle">${p.emoji}</text><text x="200" y="335" font-size="28" text-anchor="middle" fill="#0b0f1e" font-family="sans-serif" font-weight="700">${p.jp}</text><text x="20" y="38" font-size="16" fill="#f4ead5" font-family="sans-serif" opacity=".8">YM ${p.cat.toUpperCase()}</text></svg>`);
+
+/* ===== PRODUCT PHOTOS (drop-in) =====
+   Put a photo in assets/images/products/ named after the product, e.g. classic-ramune.jpg
+   (see IMAGE_GUIDE.md for every name). No code changes needed. Missing photos fall back to the generated art. */
+const IMG_EXTS=['jpg','png','webp'];                       // file types tried, in order
+const slug=p=>p.name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+const pFile=(p,e)=>`assets/images/products/${slug(p)}.${e||IMG_EXTS[0]}`;
+const pImg=p=>pFile(p);
+document.addEventListener('error',e=>{
+ const im=e.target;if(!im||im.tagName!=='IMG')return;
+ const m=(im.getAttribute('src')||'').match(/products\/(.+)\.(\w+)$/);if(!m)return;
+ const p=PRODUCTS.find(x=>slug(x)===m[1]),i=IMG_EXTS.indexOf(m[2]);if(!p)return;
+ im.src=i<IMG_EXTS.length-1?pFile(p,IMG_EXTS[i+1]):pArt(p);
+},true);
